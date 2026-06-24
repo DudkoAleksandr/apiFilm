@@ -6,9 +6,16 @@ for (let favoritFilm of favoritFilms) {
   <li>
   <p class="favorite__film-title">Название фильма: ${favoritFilm.name}</p>
   <p class="favorite__film-year">Год производста: ${favoritFilm.year}</p>
+  <button class="btn__del">Удалить</button>
   </li>
     `;
   result.insertAdjacentHTML('afterbegin', filmHtml)
-  console.log(favoritFilm);
+
+  const btnDel = document.querySelectorAll(".btn__del");
+  for(const btn of btnDel){
+    btn.id = crypto.randomUUID()
+    console.log(btn)
+  }
+
 }
 

@@ -3,16 +3,19 @@ const btn = document.querySelector(".btn");
 const resultSearch = document.querySelector(".cards__film");
 const btnAddFilm = document.querySelector(".card__film-btnadd");
 
-const favoritFilms = [];
-const allFilms = [];
-const searchFilms = []
+const favoritFilms = JSON.parse(localStorage.getItem("favorites")) || [];
+const allFilms = JSON.parse(localStorage.getItem("allFilms")) || [];
+const searchFilms = JSON.parse(localStorage.getItem("searchFilm")) || [];
+console.log(favoritFilms);
+
+render(allFilms[allFilms.length - 1]);
 
 btn.addEventListener("click", () => {
   searchFilm();
   searchFilms.push({
-    name: search.value
-  })
-  localStorage.setItem('searchFilm', JSON.stringify(searchFilms))
+    name: search.value,
+  });
+  localStorage.setItem("searchFilm", JSON.stringify(searchFilms));
 });
 
 async function searchFilm() {
@@ -24,6 +27,8 @@ async function searchFilm() {
     alert("Фильм не найден");
   } else {
     allFilms.push(result);
+    localStorage.setItem("allFilms", JSON.stringify(allFilms));
+    console.log(allFilms);
     resultSearch.innerHTML = "";
     let lastIndex = allFilms.length - 1;
     render(allFilms[lastIndex]);
@@ -46,10 +51,11 @@ function render(result) {
   const btnAddFilm = document.querySelector(".card__film-btnadd");
   btnAddFilm.addEventListener("click", () => {
     favoritFilms.push({
+      id: crypto.randomUUID(),
       name: `${result.Title}`,
       year: `${result.Year}`,
     });
-    localStorage.setItem('favorites', JSON.stringify(favoritFilms))
+    localStorage.setItem("favorites", JSON.stringify(favoritFilms));
     // console.log(favoritFilms);
   });
 }

@@ -10,13 +10,18 @@
     <section class="container">
       <div class="menu">
         <div class="menu__search">
-          <input class="search" type="text" />
+          <input class="search" type="text" placeholder="Введите фильм" />
           <button class="btn">Поиск</button>
         </div>
-        <a href="./favourites.html">Избранные фильмы</a>
-        <a href="./historysearch.html">История поиска</a>
+        <div class="menu__link">
+          <a href="./favourites.html">Избранные фильмы</a>
+          <a href="./historysearch.html">История поиска</a>
+        </div>
       </div>
-      <div class="cards__film"></div>
+      <div class="film__main">
+        <h1 class="film__main-title">Фильмы</h1>
+        <div class="cards__film"></div>
+      </div>
     </section>
     <script src="./script.js"></script>
   </body>

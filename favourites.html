@@ -7,9 +7,24 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <h1>Избранное</h1>
-    <ol class="result"></ol>
-    <a href="./index.html"><button>Назад</button></a>
+    <section class="container">
+      <div class="menu">
+        <div class="menu__search">
+          <input class="search" type="text" placeholder="Введите фильм" />
+          <button class="btn">Поиск</button>
+        </div>
+        <div class="menu__link">
+          <a href="./favourites.html">Избранные фильмы</a>
+          <a href="./historysearch.html">История поиска</a>
+          <a href="./index.html"><button>Назад</button></a>
+        </div>
+      </div>
+      <div class="film__main">
+        <h1 class="film__main-title">Избранные фильмы:</h1>
+        <ol class="result"></ol>
+      </div>
+    </section>
+
     <script src="./scriptFavorite.js"></script>
   </body>
 </html>

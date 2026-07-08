@@ -28,7 +28,7 @@ btn.addEventListener("click", () => {
 
 async function searchFilm() {
   const link = await fetch(
-    `http://www.omdbapi.com/?apikey=7ed27bc&t=${search.value}`,
+    `https://www.omdbapi.com/?apikey=7ed27bc&t=${search.value}`,
   );
   const result = await link.json();
   if (result.Response === "False") {
